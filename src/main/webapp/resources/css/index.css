@@ -1,0 +1,26 @@
+div{
+    font-size: 24px;
+}
+
+link{
+    text-decoration: none;
+}
+
+#link:hover{
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+
+#time{
+    font-family: AAlbionicBW;
+}
+
+
+@font-face {
+    font-family: 'fonte8467f0012d877d316a77f4f3aa349b9';
+
+    src:    url('https://nomail.com.ua/files/eot/e8467f0012d877d316a77f4f3aa349b9.eot?#iefix') format('embedded-opentype'),
+    url('https://nomail.com.ua/files/woff/e8467f0012d877d316a77f4f3aa349b9.woff') format('woff'),
+    url('https://nomail.com.ua/files/woff2/e8467f0012d877d316a77f4f3aa349b9.woff2') format('woff2');
+}
+
+@font-face { font-family: 'AAlbionicBW';  src: local('AAlbionicBW'), url('https://nomail.com.ua/files/woff/e8467f0012d877d316a77f4f3aa349b9.woff') format('woff'); }

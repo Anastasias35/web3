@@ -4,10 +4,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-
-<h:head>
-    <link rel="icon" href="image/coffin.png"/>
-    <title>WEB3</title>
-</h:head>
-
+<ui:composition template="master.xhtml">
+    <ui:define name="head">
+        <h:outputStylesheet library="css" name="index.css"/>
+    </ui:define>
+    <ui:define name="content">
+        <div>
+            <h1>Добро пожаловать на стартовую страницу</h1>
+            <h2>
+                    Текущее время:
+            </h2>
+            <p id="time"></p>
+            <h:link id="link" outcome="main">
+            Перейти на основную страницу
+            </h:link>
+            <h:outputScript library="js" name="index.js"/>
+        </div>
+    </ui:define>
+</ui:composition>
 </html>

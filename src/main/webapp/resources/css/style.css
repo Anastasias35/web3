@@ -1,0 +1,42 @@
+html {
+    width:100%;
+}
+
+body{
+    font-family: News702CyrillicBT-Italic;
+    padding:1% 3% 2% 3%;
+    word-wrap: break-word;
+    overflow: scroll;
+    background-color: lightblue;
+    text-align: center;
+
+}
+
+.information{
+    padding: 1% 1% 1% 1%;
+    color: lightblue;
+    text-shadow: lightslategray 2px 0px;
+    font-size: 24px;
+    top:0;
+    background-color: rgb(156, 167, 176);
+}
+
+input[type="submit"]:hover {
+    box-shadow:0 0 5px 2px rgba(108, 204, 248, 0.5);
+}
+
+input[type="submit"]{
+    font-size: 20px;
+}
+
+
+
+@font-face {
+    font-family: 'font4b19a321f81118726f47ed9e1ae13c1c';
+    src:    url('https://nomail.com.ua/files/eot/4b19a321f81118726f47ed9e1ae13c1c.eot?#iefix') format('embedded-opentype'),
+    url('https://nomail.com.ua/files/woff/4b19a321f81118726f47ed9e1ae13c1c.woff') format('woff'),
+    url('https://nomail.com.ua/files/woff2/4b19a321f81118726f47ed9e1ae13c1c.woff2') format('woff2');
+}
+
+@font-face { font-family: 'News702CyrillicBT-Italic';  src: local('News702CyrillicBT-Italic'), url('https://nomail.com.ua/files/woff/4b19a321f81118726f47ed9e1ae13c1c.woff') format('woff'); }
+

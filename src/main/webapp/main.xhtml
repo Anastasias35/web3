@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="master.xhtml">
+    <ui:define name="head">
+        <h:outputStylesheet library="css" name="main.css"/>
+    </ui:define>
+    <ui:define name="content">
+        <h1>Добро пожаловать на основную страницу</h1>
+        <div class="chart">
+            <div>
+                <canvas id="canvas"></canvas>
+
+            </div>
+
+            <div>
+                <h:form id="form">
+
+                    <div class="coordX">
+                        <p>Выберите значение координаты X:</p>
+                        <p:spinner widgetVar="x" id="x" value="#{pointBean.x}" min="-4" max="4" stepFactor="0.5" decimalSeparator="." required="true">
+                        </p:spinner>
+                    </div>
+
+                    <div class="coordY">
+                        <p>Выберите значение координаты Y:</p>
+                        <p:inputText id="y" value="#{pointBean.y}" autocomplete="off">
+
+                        </p:inputText>
+                    </div>
+
+                    <div>
+                        <p>Выберите значение радиуса:</p>
+                        <p:selectOneRadio value="#{pointBean.r}"  id="selectOneRadio" widgetVar="radius" onclick="clickOn()">
+                            <f:selectItem id="item1"  itemLabel="1" itemValue="1" class="radius"  />
+                            <f:selectItem id="item2" itemLabel="1.5" itemValue="1.5" class="radius" />
+                            <f:selectItem id="item3"  itemLabel="2" itemValue="2" class="radius" />
+                            <f:selectItem id="item4"  itemLabel="2.5" itemValue="2.5" class="radius" />
+                            <f:selectItem id="item5" itemLabel="3" itemValue="3" class="radius" />
+                        </p:selectOneRadio>
+                    </div>
+
+                    <div class="hidden">
+                        <h:inputHidden value="#{pointBean.x}" id="xCanvas"/>
+                        <h:inputHidden value="#{pointBean.y}" id="yCanvas"/>
+                    </div>
+                    <div class="button">
+                        <h:commandButton value="Отправить" styleClass="submit-button" action="#{pointBean.action1}" onclick="validate()">
+                                <f:ajax execute="@form" render="table-result"/>
+                        </h:commandButton >
+                        <!-- styleClass="button_submit"
+   action="#{pointBean.action()}" onclick="validate()">
+    <f:ajax execute="form"/>
+<p:commandButton value="Отправить" styleClass="submit"  /><br/>
+</h:commandButton> -->
+
+                    </div>
+                </h:form>
+
+            </div>
+        </div>
+
+
+        <table class="table-result">
+            <tr>
+                <td>Coordinate X</td>
+                <td>Coordinate Y</td>
+                <td>Radius R</td>
+                <td>Result</td>
+                <td colspan="2">Current time</td>
+            </tr>
+            <ui:repeat value="#{pointBean.pointEntryList}" var="pointEntry">
+                <tr>
+                    <td class="table_x">#{pointEntry.x}</td>
+                    <td class="table_y">#{pointEntry.y}</td>
+                    <td class="table_r">#{pointEntry.r}</td>
+                    <td class="table_res">#{pointEntry.result}</td>
+                    <td>#{pointEntry.curTime}</td>
+                </tr>
+            </ui:repeat>
+
+        </table>
+        <div>
+            <h:link id="link" outcome="start">
+                Перейти на стартовую страницу
+            </h:link>
+        </div>
+       <h:outputScript library="js" name="canvas1.js"/>
+        <h:outputScript library="js" name="main.js"/>
+    </ui:define>
+</ui:composition>
+</html>
