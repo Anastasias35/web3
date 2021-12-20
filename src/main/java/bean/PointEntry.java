@@ -1,15 +1,29 @@
+package bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 
-
+@Entity
+@Table(name="point")
 public class PointEntry implements Serializable {
+
+    @Column(name="coordX")
     private Double x;
+
+    @Column(name="coordY")
     private Double y;
+
+    @Column(name="radius")
     private Double r;
+
     private boolean result;
+
+    @Column (name="time")
     private String curTime;
 
     public PointEntry(){

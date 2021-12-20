@@ -1,3 +1,5 @@
+package bean;
+
 public class HitDetection {
     private Double x;
     private Double y;

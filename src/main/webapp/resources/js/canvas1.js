@@ -206,13 +206,12 @@ function drawPoint(x,y, color="#a2a8f3"){
 }
 
 function drawResult(){
+    console.log("222");
     let coordx = Array.from(document.getElementsByClassName("table_x")).map(v => v.innerHTML);
     let coordy = Array.from(document.getElementsByClassName("table_y")).map(v => v.innerHTML);
     let radius = Array.from(document.getElementsByClassName("table_r")).map(v => v.innerHTML);
     let result=Array.from(document.getElementsByClassName("table_res")).map(v=> v.innerHTML);
-    console.log(coordy.length);
     for (let i=0;i<coordx.length;i++){
-        console.log(i);
         if(result[i]==="false"){
             drawPoint(coordx[i]*40+225,225- coordy[i]*40, "red");
         }
